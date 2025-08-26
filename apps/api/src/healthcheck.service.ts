@@ -29,7 +29,7 @@ export class healthCheckService {
             }
         }
     }
-    async checkredis(): Promise<'ping' | 'pong'> {
+    async checkredis(): Promise<'up' | 'down'> {
         
         const url = process.env.REDIS_URL!;
         const redis = new Redis({
@@ -38,10 +38,10 @@ export class healthCheckService {
             connectTimeout: 1000,
         });
         try{
-            await redis.ping();
-            return 'ping';
+            const pong = await redis.ping();
+            return pong === 'PONG' ? 'up' : 'down';
         } catch (error){
-            return 'pong';
+            return 'down';
         } finally {
             if (redis) {
                 await redis.quit();
