@@ -17,6 +17,9 @@ importers:
       nestjs:
         specifier: ^0.0.1
         version: 0.0.1
+      vuejs:
+        specifier: ^3.0.1
+        version: 3.0.1
     devDependencies:
       '@nestjs/common':
         specifier: ^11.1.6
@@ -193,6 +196,10 @@ packages:
   undici-types@7.10.0:
     resolution: {integrity: sha512-t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag==}
 
+  vuejs@3.0.1:
+    resolution: {integrity: sha512-7SBlojmqoRX8/GIyWU+4U2sZsefLY+KrD0z7F20G9xsDcQOu6vAlWOqcPAKp+Ym4u394budHBRFv8t36cPxUxg==}
+    deprecated: Package no longer supported. Please use the vue package instead. Contact support@npmjs.com for more info.
+
 snapshots:
 
   '@borewit/text-codec@0.1.1': {}
@@ -347,3 +354,5 @@ snapshots:
   uint8array-extras@1.5.0: {}
 
   undici-types@7.10.0: {}
+
+  vuejs@3.0.1: {}

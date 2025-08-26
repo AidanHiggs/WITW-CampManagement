@@ -1,6 +1,6 @@
  
 import mysql2 from 'mysql2/promise';
-import redis from 'ioredis';
+import redis, { Redis } from 'ioredis';
 import {Injectable} from '@nestjs/common';
 
 type status = 'up' | 'down'
@@ -29,23 +29,24 @@ export class healthCheckService {
             }
         }
     }
-    checkredis(): Promise<'up' | 'down'> {
+    async checkredis(): Promise<'ping' | 'pong'> {
+        
         const url = process.env.REDIS_URL!;
-        let conn;
+        const redis = new Redis({
+            host: url,
+            port: 6379,
+            connectTimeout: 1000,
+        });
         try{
-            conn = new redis({
-                host: url
-            });
-             conn.connect();
-            return Promise.resolve('up');
+            await redis.ping();
+            return 'ping';
         } catch (error){
-            return Promise.resolve('down');
+            return 'pong';
         } finally {
-            if (conn) {
-                conn.quit();
+            if (redis) {
+                await redis.quit();
             }
         }
-        
     }
 
 

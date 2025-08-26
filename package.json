@@ -2,7 +2,8 @@
 	"dependencies": {
 		"ioredis": "^5.7.0",
 		"mysql2": "^3.14.3",
-		"nestjs": "^0.0.1"
+		"nestjs": "^0.0.1",
+		"vuejs": "^3.0.1"
 	},
 	"devDependencies": {
 		"@nestjs/common": "^11.1.6",
