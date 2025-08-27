@@ -1,5 +1,6 @@
 {
 	"dependencies": {
+		"@nestjs/core": "^11.1.6",
 		"ioredis": "^5.7.0",
 		"mysql2": "^3.14.3",
 		"nestjs": "^0.0.1",
