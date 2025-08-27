@@ -1,6 +1,10 @@
 {
 	"dependencies": {
 		"mysql2": "^3.14.3",
-		"ioredis": "^5.7.0"
+		"ioredis": "^5.7.0",
+		"db": "up | down",
+		"redis": "up | down",
+		"ses" : "unkown",
+		"stripe" : "unkown"
 	}
 }

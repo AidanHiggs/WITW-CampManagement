@@ -34,8 +34,9 @@ export class healthCheckService {
         const url = process.env.REDIS_URL!;
         const redis = new Redis({
             host: url,
-            port: 6379,
             connectTimeout: 1000,
+            lazyConnect: true,
+            maxRetriesPerRequest: 0,
         });
         try{
             const pong = await redis.ping();
@@ -44,7 +45,7 @@ export class healthCheckService {
             return 'down';
         } finally {
             if (redis) {
-                await redis.quit();
+                redis.disconnect();
             }
         }
     }
