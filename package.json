@@ -1,5 +1,6 @@
 {
 	"dependencies": {
+		"@nestjs/common": "^11.1.6",
 		"@nestjs/core": "^11.1.6",
 		"ioredis": "^5.7.0",
 		"mysql2": "^3.14.3",
@@ -7,7 +8,6 @@
 		"vuejs": "^3.0.1"
 	},
 	"devDependencies": {
-		"@nestjs/common": "^11.1.6",
 		"@types/node": "^24.3.0"
 	}
 }

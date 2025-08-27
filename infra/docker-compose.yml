@@ -3,7 +3,7 @@ services:
   db: 
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: witw
+      MYSQL_DATABASE: witw #need to change down the line, insecure 
       MYSQL_USER: witw
       MYSQL_PASSWORD: witw
       MYSQL_ROOT_PASSWORD: witw
