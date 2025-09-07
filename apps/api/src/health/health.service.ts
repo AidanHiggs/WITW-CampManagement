@@ -32,11 +32,11 @@ export class healthCheckService {
     async checkredis(): Promise<'up' | 'down'> { //checks if redis is up, if not return down
         
         const url = process.env.REDIS_URL!;
-        const redis = new Redis({ //creates a new redis client
+        const redis = new Redis(url,{ //creates a new redis client
             host: url,
             connectTimeout: 1000,
             lazyConnect: true, 
-            maxRetriesPerRequest: 0,
+            maxRetriesPerRequest: 1,
         });
         try{
             const pong = await redis.ping(); //pings redis 
